@@ -3,6 +3,7 @@ package pl.shop.javaee.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -37,19 +38,21 @@ public class ShowAllTreesServlet extends HttpServlet {
 				+ "/assets/css/style.css' /></head><body><h2>Spis asortymentu w <a href='shop'>sklepie:</a></h2>"
 				+ "<table><tr><th>SKU</th><th>Nazwa drzewa</th>"
 				+ "<th>Rodzaj drzewa</th><th>Data siewu</th><th>Cena</th><th>Ilość</th></tr>");
-		for (String x : db.keySet()) {
+		
+		Set<Map.Entry<String,Tree>> xSet = db.entrySet();
+		for(Map.Entry<String,Tree> x: xSet) {
 			out.println("<tr>");
-			out.println("<td>" + x + "</td>");
-			out.println("<td>" + db.get(x).getName() + "</td>");
-			if (db.get(x).isLeafy())
+			out.println("<td>" + x.getKey() + "</td>");
+			out.println("<td>" + x.getValue().getName() + "</td>");
+			if (x.getValue().isLeafy())
 				out.println("<td>Liściaste</td>");
 			else
 				out.println("<td>Iglaste</td>");
-			out.println("<td>" + db.get(x).getDataSiewu() + "</td>");
-			out.println("<td>" + db.get(x).getCena() + "</td>");
-			out.println("<td>" + db.get(x).getQty() + "</td>");
+			out.println("<td>" + x.getValue().getDataSiewu() + "</td>");
+			out.println("<td>" + x.getValue().getCena() + "</td>");
+			out.println("<td>" + x.getValue().getQty() + "</td>");
 			out.println("</tr>");
-		}
+		}		
 		out.println("</table></body></html>");
 		out.close();
 	}
