@@ -49,7 +49,6 @@ public class SummaryServlet extends HttpServlet {
 			out.println("<td>" + suma + "</td>");
 			out.println("</tr>");
 		}
-		session.setAttribute("storage", storageS);
 		out.println("</table>Razem do zapłaty: " + zaplata);
 		out.println("<br/><a href='close'>Potwierdzam zakup</a></body></html>");
 
