@@ -23,6 +23,7 @@ public class FormNewsletter extends HttpServlet {
 		
 		out.println("<html><body>"+
 		"<form action='dataNewsletter' method='post'>"+
+				"Twoje imie i nazwisko: <input type='text' name='fullName'></br>"+
 				"Data newslettera od: <input type='text' name='odCzasu'><br/>"+
 		"Data newslettera do: <input type='text' name='doCzasu'><br/>"+
 				"Czestotliwosc: <br/> <input type='radio' name='czestotliwosc' value='codziennie'>Codziennie<br/>"+

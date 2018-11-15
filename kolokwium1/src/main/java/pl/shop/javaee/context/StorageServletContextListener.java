@@ -5,6 +5,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+import pl.shop.javaee.service.NewsStorage;
 import pl.shop.javaee.service.StorageService;
 
 @WebListener
@@ -15,6 +16,7 @@ public class StorageServletContextListener implements ServletContextListener {
 
 		ServletContext servletContext = servletContextEvent.getServletContext();
 		servletContext.setAttribute("storage", new StorageService());
+		servletContext.setAttribute("newsletter", new NewsStorage());
 	}
 
 	@Override
