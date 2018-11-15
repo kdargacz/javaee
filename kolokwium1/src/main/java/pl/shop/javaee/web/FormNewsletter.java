@@ -30,8 +30,8 @@ public class FormNewsletter extends HttpServlet {
 				"<input type='radio' name='czestotliwosc' value='miesiecznie'>Miesiecznie<br/>"+
 				"Na tematy zwiazane z:<br/>"+
 				"<input type='checkbox' name='temat' value='nowe_produkty'>Nowe produkty</br>"+
-				"<input type='checkbox' name='temat' value='nowe_produkty'>Nowe produkty</br>"+
-			"</form></body></html>");
+				"<input type='checkbox' name='temat' value='nowe_promocje'>Nowe promocje</br>"+
+			"<input type='submit' value='ok'></form></body></html>");
 		
 		
 		
