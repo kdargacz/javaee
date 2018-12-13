@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "69206af5-70bc-48e8-8d08-0eaeafaab532",
+		"name": "restejbjpa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get person smoke test",
+			"item": [
+				{
+					"name": "smoke test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/restejbjpademo/api/person/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restejbjpademo",
+								"api",
+								"person",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post person",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\" : \"Jan\",\n\t\"yob\" : 2017\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restejbjpademo/api/person/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restejbjpademo",
+								"api",
+								"person",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get person",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/restejbjpademo/api/person/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restejbjpademo",
+								"api",
+								"person",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post tree",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"leafy\": true,\n    \"name\": \"buk\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restejbjpademo/api/tree/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restejbjpademo",
+								"api",
+								"tree",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
