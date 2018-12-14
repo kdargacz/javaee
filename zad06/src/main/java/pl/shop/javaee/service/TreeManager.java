@@ -16,10 +16,12 @@ public class TreeManager {
 		em.persist(tree);		
 	}
 	
-	/*
-	public void addTree(Tree tree) {
-		db.add(tree);
+	public Tree getTree(Long id) {
+		return em.find(Tree.class, id);
 	}
+	
+	
+	/*
 
 	public void updateTree(Tree tree) {
 		int id = -1;
@@ -34,14 +36,6 @@ public class TreeManager {
 			db.set(id, tree);
 	}
 
-	public Tree getTree(Integer id) {
-		return db.get(id);
-	}
-
-	public Tree getTreeExample() {
-		//return new Tree(0,"buk", true, new Date(), 88, 6);
-		return new Tree();
-	}
 
 	public void deleteTree(Tree tree) {
 		db.remove(tree);

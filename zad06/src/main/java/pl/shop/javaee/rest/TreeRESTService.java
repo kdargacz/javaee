@@ -33,15 +33,16 @@ public class TreeRESTService {
 		return Response.status(201).entity("Tree").build();
 	}
 	
-	/*
+	
 	@GET
 	@Path("/{TreeId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Tree getTree(@PathParam("TreeId") Integer id) {
+	public Tree getTree(@PathParam("TreeId") Long id) {
 		Tree t = tm.getTree(id);
 		return t;
 	}
-
+	
+	/*
 	@GET
 	@Path("/tree")
 	@Produces(MediaType.APPLICATION_JSON)
