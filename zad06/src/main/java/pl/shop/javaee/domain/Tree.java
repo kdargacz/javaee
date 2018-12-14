@@ -11,29 +11,28 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @Entity
 public class Tree {
+
 	private Long id;
-	private String treeName = "unknown";
-	private boolean isLeafy = true;
-	private Date dataSiewu = null;
-	private double cena = 0.0;
-	private int qty = 0;
+
+	private String name;
+
+	private boolean leafy;
+
+	private Date dataSiewu;
+
+	private double cena;
+
+	private int qty;
 
 	public Tree() {
 		super();
 	}
 
-	public Tree(Long id, String name, boolean isLeafy) {
+	public Tree(Long id, String name, boolean leafy, Date dataSiewu, double cena, int qty) {
 		super();
 		this.id = id;
-		this.treeName = name;
-		this.isLeafy = isLeafy;
-	}
-	
-	public Tree(Long id, String name, boolean isLeafy, Date dataSiewu, double cena, int qty) {
-		super();
-		this.id = id;
-		this.treeName = name;
-		this.isLeafy = isLeafy;
+		this.name = name;
+		this.leafy = leafy;
 		this.dataSiewu = dataSiewu;
 		this.cena = cena;
 		this.qty = qty;
@@ -44,24 +43,25 @@ public class Tree {
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getName() {
-		return treeName;
+		return name;
 	}
 
 	public void setName(String name) {
-		this.treeName = name;
+		this.name = name;
 	}
 
-	public boolean isLeafy() {
-		return isLeafy;
+	public boolean getLeafy() {
+		return leafy;
 	}
 
-	public void setLeafy(boolean isLeafy) {
-		this.isLeafy = isLeafy;
+	public void setLeafy(boolean leafy) {
+		this.leafy = leafy;
 	}
 
 	public Date getDataSiewu() {

@@ -1,21 +1,13 @@
 package pl.shop.javaee.service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import javax.ejb.Singleton;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.example.restejbjpa.domain.Person;
-
 import pl.shop.javaee.domain.Tree;
 
-@Singleton
+@Stateless
 public class TreeManager {
-
-	//private List<Tree> db = Collections.synchronizedList(new ArrayList<>());
 
 	@PersistenceContext
 	EntityManager em;

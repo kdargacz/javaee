@@ -1,10 +1,7 @@
 package pl.shop.javaee.rest;
 
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -23,20 +20,25 @@ import pl.shop.javaee.service.TreeManager;
 @Stateless
 public class TreeRESTService {
 
-	/*
-	@Inject
-	private TreeManager em;
-	*/
 	
-	@PersistenceContext
-	EntityManager em;
+	@Inject
+	private TreeManager tm;
+	
+	@POST
+	@Path("/")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response addTree(Tree tree) {
+		tm.addTree(tree);
+
+		return Response.status(201).entity("Tree").build();
+	}
 	
 	/*
 	@GET
 	@Path("/{TreeId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Tree getTree(@PathParam("TreeId") Integer id) {
-		Tree t = em.getTree(id);
+		Tree t = tm.getTree(id);
 		return t;
 	}
 
@@ -44,29 +46,22 @@ public class TreeRESTService {
 	@Path("/tree")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Tree getTreeExample() {
-		Tree t = em.getTreeExample();
+		Tree t = tm.getTreeExample();
 		return t;
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Tree> getTrees() {
-		return em.getAllTrees();
+		return tm.getAllTrees();
 	}
-	*/
-	@POST
-	@Path("/")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addTree(Tree tree) {
-		em.persist(tree);
-
-		return Response.status(201).entity("Tree").build();
-	}
-	/*
+	
+	
+	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response updateTree(Tree tree) {
-		em.updateTree(tree);
+		tm.updateTree(tree);
 
 		return Response.status(201).entity("Tree").build();
 	}
@@ -81,14 +76,14 @@ public class TreeRESTService {
 
 	@DELETE
 	public Response clearTrees() {
-		em.deleteAllTrees();
+		tm.deleteAllTrees();
 		return Response.status(200).build();
 	}
 
 	@DELETE
 	@Path("/{TreeId}")
 	public Response clearTree(@PathParam("TreeId") Integer id) {
-		em.deleteTree(em.getTree(id));
+		tm.deleteTree(tm.getTree(id));
 		return Response.status(200).build();
 	}
 	*/
