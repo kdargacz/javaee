@@ -33,7 +33,6 @@ public class TreeRESTService {
 		return Response.status(201).entity("Tree").build();
 	}
 	
-	
 	@GET
 	@Path("/{TreeId}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -50,32 +49,26 @@ public class TreeRESTService {
 		return Response.status(201).entity("Tree").build();
 	}
 	
-	/*
-	@GET
-	@Path("/tree")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Tree getTreeExample() {
-		Tree t = tm.getTreeExample();
-		return t;
-	}
-	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Tree> getTrees() {
-		return tm.getAllTrees();
-	}
-	
-	
-	
-	
-
-
 	@GET
 	@Path("/test")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String test() {
-		return "REST API /Tree is running today!";
+		return "EJB + REST + JPA API /Tree is running today!";
 	}
+	
+	@DELETE
+	@Path("/{TreeId}")
+	public Response deleteTree(@PathParam("TreeId") Long id) {
+		tm.deleteTree(id);
+		return Response.status(200).build();
+	}
+	
+	/*	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Tree> getTrees() {
+		return tm.getAllTrees();
+	}	
 
 	@DELETE
 	public Response clearTrees() {
@@ -83,11 +76,6 @@ public class TreeRESTService {
 		return Response.status(200).build();
 	}
 
-	@DELETE
-	@Path("/{TreeId}")
-	public Response clearTree(@PathParam("TreeId") Integer id) {
-		tm.deleteTree(tm.getTree(id));
-		return Response.status(200).build();
-	}
+	
 	*/
 }

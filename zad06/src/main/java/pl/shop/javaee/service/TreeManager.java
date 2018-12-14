@@ -25,11 +25,13 @@ public class TreeManager {
 		em.merge(tree);
 	}
 	
-	/*
-	public void deleteTree(Tree tree) {
-		db.remove(tree);
+	public void deleteTree(Long id) {
+		Tree tree = em.find(Tree.class, id);
+		if (tree != null)
+		em.remove(tree);
 	}
-
+	
+	/*
 	public List<Tree> getAllTrees() {
 		return db;
 	}
