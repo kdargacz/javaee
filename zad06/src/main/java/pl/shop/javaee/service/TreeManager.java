@@ -19,24 +19,13 @@ public class TreeManager {
 	public Tree getTree(Long id) {
 		return em.find(Tree.class, id);
 	}
-	
-	
-	/*
 
 	public void updateTree(Tree tree) {
-		int id = -1;
-		Tree newTree;
-		for (Tree t : db) {
-			if (t.getName().equals(tree.getName())) {
-				newTree = t;
-				id = db.indexOf(newTree);
-			}
-		}
-		if (id != -1)
-			db.set(id, tree);
+		if (tree != null)
+		em.merge(tree);
 	}
-
-
+	
+	/*
 	public void deleteTree(Tree tree) {
 		db.remove(tree);
 	}

@@ -42,6 +42,14 @@ public class TreeRESTService {
 		return t;
 	}
 	
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response updateTree(Tree tree) {
+		tm.updateTree(tree);
+
+		return Response.status(201).entity("Tree").build();
+	}
+	
 	/*
 	@GET
 	@Path("/tree")
@@ -59,13 +67,7 @@ public class TreeRESTService {
 	
 	
 	
-	@PUT
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateTree(Tree tree) {
-		tm.updateTree(tree);
-
-		return Response.status(201).entity("Tree").build();
-	}
+	
 
 
 	@GET
