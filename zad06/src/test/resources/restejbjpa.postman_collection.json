@@ -120,7 +120,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"leafy\": true,\n    \"name\": \"buk\"\n}"
+							"raw": "{\n    \"leafy\": true,\n    \"name\": \"buk\",\n    \"qty\": 12\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/restejbjpademo/api/tree/",
