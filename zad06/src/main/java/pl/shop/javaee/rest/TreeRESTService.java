@@ -75,7 +75,5 @@ public class TreeRESTService {
 		tm.deleteAllTrees();
 		return Response.status(200).build();
 	}
-
-	
 	*/
 }
