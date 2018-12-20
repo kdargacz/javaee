@@ -13,7 +13,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import pl.shop.javaee.domain.Person;
 import pl.shop.javaee.domain.Tree;
+import pl.shop.javaee.service.PersonManager;
 import pl.shop.javaee.service.TreeManager;
 
 @Path("tree")
@@ -24,14 +26,35 @@ public class TreeRESTService {
 	@Inject
 	private TreeManager tm;
 	
+	@Inject
+	private PersonManager pm;
+	
 	@POST
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response addTree(Tree tree) {
+		
+		Person person = new Person("Jan", "kowalski", 1999);
+		
+		pm.addPerson(person);
+		
+		tree.setOwner(person);
+		
 		tm.addTree(tree);
 
-		return Response.status(201).entity("Tree").build();
+		return Response.status(Response.Status.CREATED).build();  
 	}
+	
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String hello(){
+
+		Tree retrieved = tm.findTreeById(1L);
+		return "Tree: " + retrieved.getName() + " Owner: " + retrieved.getOwner().getFirstName();
+	}
+
+	
 	
 	@GET
 	@Path("/{TreeId}")

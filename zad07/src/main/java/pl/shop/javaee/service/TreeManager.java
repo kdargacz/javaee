@@ -31,6 +31,15 @@ public class TreeManager {
 		em.remove(tree);
 	}
 	
+	
+	public Tree findTreeById(long id) {
+		
+		//		Dog dog = em.find(Dog.class, id);
+		//sysout  dog.getOwner().getFirstName();
+		return em.find(Tree.class, id);
+		
+	}
+	
 	/*
 	public List<Tree> getAllTrees() {
 		return db;
