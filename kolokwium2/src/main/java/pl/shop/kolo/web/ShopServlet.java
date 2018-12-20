@@ -1,6 +1,8 @@
 package pl.shop.kolo.web;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -9,11 +11,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import pl.shop.kolo.domain.Card;
 import pl.shop.kolo.service.StorageService;
 
 
 @WebServlet("/shop")
 public class ShopServlet extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -21,7 +29,7 @@ public class ShopServlet extends HttpServlet {
 		// pobranie z kontekstu aplikacji interfejsu Map
 		ServletContext servletContext = getServletContext();
 		StorageService storage = (StorageService) servletContext.getAttribute("storageC");
-		//Map<String, Card> db = storage.();
+		Map<String, Card> db = storage.getAllcards();
 
 		response.setContentType("text/html;charset=UTF-8");
 
@@ -29,10 +37,8 @@ public class ShopServlet extends HttpServlet {
 
 		// wyświetlenie wszystkich elementów z interfejsu Map z opcją dodania do
 		// koszyka
-		out.println("<html><head><link rel='stylesheet' type='text/css' href='" + request.getContextPath()
-				+ "/assets/css/style.css' /></head><body><h1>Sklep ogrodniczy z drzewami</h1>"
-				+ "<table><tr><th>Nazwa</th><th>Rodzaj</th><th>Data siewu</th><th>Cena</th>"
-				+ "<th><form action='basket' method='post'><input type='submit' value='Koszyk' /></th></tr>");
+		out.println("<html><head></head><body>"
+				+"<form action='basket' method='post'><input type='submit' value='Koszyk' /></th></tr>");
 		for (String x : db.keySet()) {
 			out.println("<tr>");
 			out.println("<td>" + db.get(x).getName() + "</td>");
