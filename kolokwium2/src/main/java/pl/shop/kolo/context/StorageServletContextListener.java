@@ -5,7 +5,8 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import pl.shop.javaee.service.StorageService;
+import pl.shop.kolo.service.StorageService;
+
 
 @WebListener
 public class StorageServletContextListener implements ServletContextListener {

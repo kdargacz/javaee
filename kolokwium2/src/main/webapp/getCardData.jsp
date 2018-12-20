@@ -8,8 +8,9 @@
 </head>
 <body>
 <form action="data" method="post">
+SKU: <input type="text" name="sku" ><br>
 Data produkcji: <input type="text" name="produkcja" value="yyyy-MM-dd" ><br/>
-Cena: <input type="text" name="qty"><br>
+Cena: <input type="text" name="cena"><br>
 Producent:<br>
 USA: <input type="radio" name="producent" value="usa"><br>
 Europa: <input type="radio" name="producent" value="europa"><br>

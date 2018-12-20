@@ -5,8 +5,8 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import pl.shop.javaee.domain.Rodo;
-import pl.shop.javaee.service.StorageService;
+import pl.shop.kolo.service.StorageService;
+
 
 @WebListener
 public class BasketRequestSessionListener implements HttpSessionListener {
