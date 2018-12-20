@@ -7,8 +7,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id=""></jsp:useBean>
+<form action="data" method="post">
+Data produkcji: <input type="text" name="produkcja" value="yyyy-MM-dd" ><br/>
+Cena: <input type="text" name="qty"><br>
+Producent:<br>
+USA: <input type="radio" name="producent" value="usa"><br>
+Europa: <input type="radio" name="producent" value="europa"><br>
+Ilosc: <input type="text" name="qty" ><br>
+Kolory:<br>
+Kolorowe: <input type="checkbox" name="kolory" value="kolorowe"><br>
+Obrazki: <input type="checkbox" name="kolory" value="obrazki"><br>
 
+
+
+
+<input type="submit" value="ok">
+</form>
 
 </body>
 </html>
