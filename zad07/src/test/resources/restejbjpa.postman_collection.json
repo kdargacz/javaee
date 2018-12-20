@@ -52,7 +52,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstName\" : \"Jan\",\n\t\"yob\" : 2017\n}"
+							"raw": "{\n\t\"firstName\" : \"Jan\",\n\t\"lastName\" : \"Kowalski\",\n\t\"yob\" : 2017\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/restejbjpademo/api/person/",
@@ -77,7 +77,7 @@
 			"name": "get person",
 			"item": [
 				{
-					"name": "get all",
+					"name": "get",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -86,7 +86,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8080/restejbjpademo/api/person/",
+							"raw": "http://localhost:8080/restejbjpademo/api/person/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -96,7 +96,7 @@
 								"restejbjpademo",
 								"api",
 								"person",
-								""
+								"1"
 							]
 						}
 					},
@@ -195,6 +195,32 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get tree name and owner firstname",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/restejbjpademo/api/tree/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restejbjpademo",
+								"api",
+								"tree",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -257,6 +283,37 @@
 								"restejbjpademo",
 								"api",
 								"tree",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delete person",
+			"item": [
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/restejbjpademo/api/person/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restejbjpademo",
+								"api",
+								"person",
 								"1"
 							]
 						}
